@@ -1962,7 +1962,7 @@ void kbasep_js_suspend(struct kbase_device *kbdev)
 
 		/* MALI_SEC_INTEGRATION
 		 * Fix to prevent accessing to null-pointer kctx when it is already destroyed */
-		if (kctx &&retained & 1u)
+		if ( kctx && retained & 1u)
 			kbasep_js_runpool_release_ctx(kbdev, kctx);
 	}
 
