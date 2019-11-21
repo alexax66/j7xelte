@@ -180,6 +180,8 @@ void set_power_suspend_state_autosleep_hook(int new_state)
 	if (mode == POWER_SUSPEND_AUTOSLEEP || mode == POWER_SUSPEND_HYBRID)
 		set_power_suspend_state(new_state);
 }
+EXPORT_SYMBOL(set_power_suspend_state_autosleep_hook);
+
 void set_power_suspend_state_panel_hook(int new_state)
 {
 	dprintk("[POWERSUSPEND] autosleep resquests %s.\n", new_state == POWER_SUSPEND_ACTIVE ? "sleep" : "wakeup");
@@ -187,7 +189,6 @@ void set_power_suspend_state_panel_hook(int new_state)
 	if (mode == POWER_SUSPEND_PANEL || mode == POWER_SUSPEND_HYBRID)
 		set_power_suspend_state(new_state);
 }
-
 EXPORT_SYMBOL(set_power_suspend_state_panel_hook);
 
 static int power_suspend_fb_notifier(struct notifier_block *self,
